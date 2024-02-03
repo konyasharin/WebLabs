@@ -32,6 +32,11 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-size: 48px;
+  font-weight: 500;
+}
+
 a, p {
   font-size: 24px;
   font-weight: 400;
@@ -89,6 +94,7 @@ header a:hover {
   margin-bottom: 50px;
 }
 .donates__block {
+  transition: 0.5s all;
   margin-bottom: 20px;
   display: flex;
 }
@@ -104,8 +110,60 @@ header a:hover {
 .donates__block:last-child {
   margin-bottom: 0;
 }
+.donates__block:hover {
+  transform: scale(1.1);
+}
 .donates hr {
   margin-bottom: 20px;
+}
+.donates__table {
+  margin-top: 80px;
+  height: 250px;
+  position: relative;
+}
+.donates__table img {
+  position: absolute;
+  height: 100px;
+  right: -20px;
+  top: -99px;
+}
+.donates__column {
+  height: 100%;
+  float: left;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #d9e8c4;
+  border-radius: 5px 0 0 5px;
+}
+.donates__column:last-child {
+  background-color: #bac7a9;
+  border-radius: 0 5px 5px 0;
+}
+.donates__column h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.donates__column li {
+  font-size: 36px;
+  font-weight: 500;
+}
+.donates__column p {
+  transition: 0.5s all;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: auto;
+  background-color: #9fad91;
+  transform: skew(-20deg);
+  width: 250px;
+}
+.donates__column p b {
+  display: block;
+  transform: skew(20deg);
+}
+.donates__column p:hover {
+  transform: scale(1.2) skew(-20deg);
 }
 
 footer {
