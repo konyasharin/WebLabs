@@ -2,24 +2,63 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Это мой сайт для куса по веб-разработке">
-    <title>Это мой сайт</title>
+    <meta name="description" content="Благотворительность для животных">
+    <title>Благотворительность</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="">Задонатить</a>
-            <a href="">Благотворительность</a>
-            <a href="">Белки</a>
-            <a href="">Соцсети</a>
-        </header>
-    </div>
+    <img src="./img/squirrel.jpg" alt="squirrel" id="background">
+    <header>
+        <div class="container">
+            <a href="#donates">Донаты</a>
+            <a href="#footer">Благотворительность</a>
+            <a href="#footer">Приюты</a>
+            <a href="#footer">Соцсети</a>
+        </div>
+    </header>
     <main>
-
+        <div class="container">
+            <h1>Помогите нашим друзьям-пушистикам</h1>
+            <a href="#">
+                <button>Помочь животным</button>
+            </a>
+        </div>
     </main>
-    <footer>
-
+    <section class="donates" id="donates">
+        <div class="container">
+            <h2>Донаты</h2>
+            <div class="donates__block">
+                <img src="img/whiteBear.jpg" alt="whiteBear">
+                <p><b>Приюты для животных</b> сталкиваются с постоянными вызовами в обеспечении своих подопечных основными потребностями, такими как пища, ветеринарная помощь, и комфортные условия проживания. Ваше финансовое участие помогает им обеспечивать стабильность и уход за животными, <i>предоставляя им лучший шанс на счастливую жизнь.</i></p>
+            </div>
+            <hr>
+            <div class="donates__block">
+                <img src="img/cat.jpg" alt="cat">
+                <p><b>Денежные средства</b>, переданные приютам, <b>играют ключевую роль</b> в обеспечении ветеринарной помощи и профилактического лечения для животных. Это включает в себя вакцинацию, стерилизацию, лечение болезней и травм, что не только поддерживает здоровье каждого животного, но и способствует контролю популяции.</p>
+            </div>
+            <hr>
+            <div class="donates__block">
+                <img src="img/panda.jpg" alt="panda">
+                <p>Финансовая поддержка помогает приютам создавать лучшие условия для животных, что повышает их шансы на удачное усыновление. Это включает в себя социализацию, тренировки и улучшение поведенческих навыков, делая их более подходящими для новых домов.</p>
+            </div>
+            <div class="donates__table">
+                
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <p>&copyНиколай Малышев</p>
+            <p>Похожие сайты:</p>
+            <ul>
+                <li><a href="https://priutvernost.ru/">Организация защиты животных «Верность»</a></li>
+                <li><a href="https://mypes-krsk.ru/">Красноярская региональная общественная организация защиты животных</a></li>
+                <li><a href="https://dobrovmeste.ru/">Добро Вместе</a></li>
+            </ul>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
