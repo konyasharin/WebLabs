@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Обработчик для 7 задания первый
+document.addEventListener("DOMContentLoaded", (e) => {
   init()
+  console.log(e)
 })
 
 function init(){
@@ -13,6 +15,12 @@ function init(){
   console.log(sumArr([10, -3, 23, 1, 1.3]))
   console.log(minArr([10, -3, 23, 1, 1.3]))
   console.log(searchSecondBigNumber([10, -3, 23, 1, 1.3]))
+  outputInitInfo()
+  // Обработчик для 7 задания второй
+  document.onclick = ((e) => {
+    console.log(e)
+  })
+
 }
 
 // Функции для 6 задания
@@ -37,4 +45,24 @@ function minArr(arrayOfNums){
 // 3)
 function searchSecondBigNumber(arrayOfNums){
   return arrayOfNums.sort()[arrayOfNums.length - 2]
+}
+
+// 7 задание
+function outputInitInfo(){
+  document.querySelectorAll("img").forEach((img, i) => {
+    console.log(`Информация об изображении №${i + 1}:`)
+    console.log({
+      height: img.height,
+      width: img.width,
+      src: img.src,
+      alt: img.alt
+    })
+  })
+  document.querySelectorAll("a").forEach((link, i) => {
+    console.log(`Информация о ссылке №${i + 1}:`)
+    console.log({
+      href: link.href,
+      text: link.text
+    })
+  })
 }
