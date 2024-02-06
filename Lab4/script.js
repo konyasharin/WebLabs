@@ -21,6 +21,30 @@ function init(){
     console.log(e)
   })
 
+  const tableImg = document.querySelector("#table-img")
+  tableImg.addEventListener("click", () => {
+    if(tableImg.src.search("dogWithGlasses.png") !== -1){
+      tableImg.src = tableImg.src.replace("dogWithGlasses.png", "hippopotamus.png")
+    } else if(tableImg.src.search("hippopotamus.png") !== -1){
+      tableImg.src = tableImg.src.replace("hippopotamus.png", "dogWithGlasses.png")
+    }
+  })
+
+  // Модификация Array для 8 задания
+  Array.prototype.calcAverage = function(){
+    let sum = 0
+    for(let i = 0; i < this.length; i++){
+      sum += this[i]
+    }
+    return sum / this.length
+  }
+  const t = [1, 2, 3]
+  console.log(t.calcAverage())
+
+  const donates = [new Donate("Маленькая помощь", 59), new Donate("Большая помощь", 159)]
+  document.querySelector("thead").querySelectorAll("th").forEach((elem, i) => {
+    elem.innerHTML = `<h3>${donates[i].name}</h3>`
+  })
 }
 
 // Функции для 6 задания
@@ -66,3 +90,13 @@ function outputInitInfo(){
     })
   })
 }
+
+function Donate(name, price){
+  this.name = name
+  this.price = price
+  this.descriptions = []
+  this.addDescription = function(description){
+    this.descriptions.push(description)
+  }
+}
+
