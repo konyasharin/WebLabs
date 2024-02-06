@@ -8,9 +8,18 @@ function init(){
   const imgs = document.querySelector(".donates").querySelectorAll("img")
   imgs.forEach(img => {
     if(img.classList.contains("col-2")){
-      img.height = img.width
+      img.height = +img.width
     }
   })
+
+  // 8 задание демонстрация работы с объектами
+  const donate1 = new Donate("Маленькая помощь", 59)
+  donate1.addDescription("Помогаем едой")
+  const donate2 = new Donate("Большая помощь", 159)
+  donate2.addDescription("Помогаем едой")
+  donate2.addDescription("Помощь приютам")
+  addDonatesToPage([donate1, donate2])
+
   // Используем функции для 6 задания
   console.log(sumArr([10, -3, 23, 1, 1.3]))
   console.log(minArr([10, -3, 23, 1, 1.3]))
@@ -40,11 +49,6 @@ function init(){
   }
   const t = [1, 2, 3]
   console.log(t.calcAverage())
-
-  const donates = [new Donate("Маленькая помощь", 59), new Donate("Большая помощь", 159)]
-  document.querySelector("thead").querySelectorAll("th").forEach((elem, i) => {
-    elem.innerHTML = `<h3>${donates[i].name}</h3>`
-  })
 }
 
 // Функции для 6 задания
@@ -100,3 +104,34 @@ function Donate(name, price){
   }
 }
 
+function addDonatesToPage(donates){
+  donates = donates.map((donate, i) => {
+    let descriptionElems = []
+    donate.descriptions.forEach(description => {
+      descriptionElems.push(`<li>${description}</li>`)
+    })
+    if(i === 0){
+      return {
+        headElem: `<th><h3>${donate.name}</h3><img src="img/dogWithGlasses.png" alt="dogWithGlasses" id="table-img"></th>`,
+        bodyElem: `<td><ul>${descriptionElems.join("")}</ul></td>`,
+        priceElem: `<td><p><b>${donate.price}&euro;</b></p></td>`
+      }
+    }
+    return {
+      headElem: `<th><h3>${donate.name}</h3></th>`,
+      bodyElem: `<td><ul>${descriptionElems.join("")}</ul></td>`,
+      priceElem: `<td><p><b>${donate.price}&euro;</b></p></td>`
+    }
+  })
+  let headElems = ""
+  let bodyElems = ""
+  let priceElems = ""
+  donates.forEach(donate => {
+    headElems += donate.headElem
+    bodyElems += donate.bodyElem
+    priceElems += donate.priceElem
+  })
+  document.querySelector(".table__titles").innerHTML = headElems
+  document.querySelector(".table__descriptions").innerHTML = bodyElems
+  document.querySelector(".table__prices").innerHTML = priceElems
+}
